@@ -1,0 +1,386 @@
+/* ============================================================
+   Château-d'Œx Christmas 2026 — shared stylesheet
+   A formal, letterhead-style treatment for the itinerary
+   and travel-details pages.
+   ============================================================ */
+
+:root {
+  --paper:       #f7f1e3;
+  --paper-deep:  #efe6cd;
+  --card:        #fffdf6;
+  --ink:         #26291f;
+  --ink-soft:    #4a4636;
+  --sub:         #7a7057;
+  --pine:        #1f4d3a;
+  --pine-deep:   #143327;
+  --gold:        #a37b2c;
+  --gold-soft:   #d8bd82;
+  --rule:        #cbbd93;
+  --line:        #e2d7b8;
+  --wine:        #7a2b2b;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0 18px 90px;
+  background:
+    radial-gradient(ellipse at top, #fffdf8 0%, var(--paper) 55%),
+    var(--paper);
+  color: var(--ink);
+  font-family: "Times New Roman", Times, "Liberation Serif", Georgia, serif;
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+.wrap { max-width: 920px; margin: 0 auto; }
+
+/* ---------------- Masthead ---------------- */
+
+.masthead {
+  padding: 46px 0 22px;
+  text-align: center;
+}
+
+.crest {
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 14px;
+  color: var(--pine);
+}
+
+.masthead .kicker {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.masthead h1 {
+  font-size: 2.15rem;
+  font-weight: bold;
+  margin: 0 0 8px;
+  letter-spacing: 0.01em;
+  color: var(--pine-deep);
+}
+
+.masthead .subtitle {
+  color: var(--sub);
+  font-style: italic;
+  font-size: 1rem;
+  margin: 0 0 22px;
+}
+
+.rule {
+  border: none;
+  height: 3px;
+  margin: 0 auto 4px;
+  max-width: 640px;
+  background: linear-gradient(to right, transparent, var(--gold) 15%, var(--gold) 85%, transparent);
+}
+.rule.thin {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--rule) 15%, var(--rule) 85%, transparent);
+  margin-top: 4px;
+  margin-bottom: 22px;
+}
+
+nav.pagelinks {
+  text-align: center;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 1.02rem;
+  margin-bottom: 6px;
+}
+nav.pagelinks a {
+  color: var(--pine-deep);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+nav.pagelinks a:hover { border-bottom-color: var(--gold); }
+nav.pagelinks a.current {
+  color: var(--wine);
+  border-bottom: 1px solid var(--wine);
+}
+nav.pagelinks .sep {
+  color: var(--gold-soft);
+  margin: 0 14px;
+}
+
+/* ---------------- Generic content blocks ---------------- */
+
+.note {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--pine);
+  padding: 14px 18px;
+  border-radius: 2px;
+  font-size: 0.93rem;
+  margin: 22px 0;
+  color: var(--ink-soft);
+}
+.note a { color: var(--pine-deep); }
+
+.flag {
+  font-size: 0.86rem;
+  background: #fbf3e2;
+  border-left: 3px solid var(--gold);
+  padding: 10px 14px;
+  border-radius: 2px;
+  margin-top: 12px;
+  color: var(--ink-soft);
+}
+
+.caveat {
+  font-size: 0.85rem;
+  color: var(--sub);
+  margin-top: 14px;
+  border-top: 1px dotted var(--rule);
+  padding-top: 14px;
+}
+
+section.panel, .day {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 26px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 0 rgba(163, 123, 44, 0.06);
+}
+
+h2.section-title, .day h2 {
+  margin: 0 0 4px;
+  font-size: 1.32rem;
+  color: var(--pine-deep);
+  font-weight: bold;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-variant: small-caps;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: var(--gold);
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.daymeta { color: var(--sub); font-style: italic; font-size: 0.92rem; margin-bottom: 16px; }
+
+table.sched { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+table.sched td { padding: 8px 10px; vertical-align: top; border-bottom: 1px dotted var(--rule); }
+table.sched tr:last-child td { border-bottom: none; }
+table.sched td:first-child { white-space: nowrap; color: var(--pine-deep); font-weight: bold; width: 112px; }
+
+a { color: var(--pine-deep); text-decoration: none; border-bottom: 1px solid rgba(31, 77, 58, 0.32); }
+a:hover { border-bottom-color: var(--pine); }
+
+.map { font-size: 0.8rem; }
+.map::before { content: "\2022 "; color: var(--gold); font-weight: bold; }
+
+footer.pagefoot {
+  text-align: center;
+  color: var(--sub);
+  font-size: 0.82rem;
+  margin-top: 46px;
+  font-style: italic;
+}
+footer.pagefoot .rule.thin { margin-bottom: 14px; }
+
+/* ---------------- At-a-glance table ---------------- */
+
+.glance table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 18px 0 32px; }
+.glance th, .glance td { text-align: left; padding: 8px 9px; border-bottom: 1px solid var(--line); }
+.glance th {
+  color: var(--pine-deep);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid var(--gold);
+}
+.glance tr:hover td { background: #fbf6e8; }
+
+/* ---------------- Map ---------------- */
+
+.map-section { margin: 30px 0 38px; }
+.map-section h2 { font-size: 1.2rem; color: var(--pine-deep); margin: 0 0 8px; }
+.map-section p { font-size: 0.9rem; color: var(--sub); margin: 0 0 12px; font-style: italic; }
+#itinerary-map {
+  height: 480px;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+  z-index: 1;
+}
+.leaflet-popup-content {
+  font-family: "Times New Roman", Times, Georgia, serif;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+.leaflet-popup-content strong { color: var(--pine-deep); }
+
+/* ================================================================
+   Travel-details page specific styling
+   ================================================================ */
+
+.detail-intro {
+  text-align: center;
+  color: var(--sub);
+  font-style: italic;
+  max-width: 620px;
+  margin: 0 auto 34px;
+  font-size: 0.96rem;
+}
+
+.section-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: -8px;
+  margin-right: 10px;
+  color: var(--gold);
+}
+
+.traveler-list {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  margin: 4px 0 20px;
+  font-style: italic;
+}
+
+/* Ticket-stub confirmation badge */
+.stub-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 18px 0 22px;
+}
+.stub {
+  position: relative;
+  flex: 1 1 220px;
+  background: #fffef9;
+  border: 1px dashed var(--gold);
+  border-radius: 4px;
+  padding: 14px 16px;
+}
+.stub .stub-label {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  color: var(--sub);
+  display: block;
+  margin-bottom: 4px;
+}
+.stub .stub-code {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--wine);
+  letter-spacing: 0.05em;
+}
+.stub .stub-sub { font-size: 0.8rem; color: var(--sub); margin-top: 4px; }
+
+/* Flight leg table */
+table.legs { width: 100%; border-collapse: collapse; font-size: 0.93rem; margin: 14px 0 6px; }
+table.legs caption {
+  text-align: left;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--pine-deep);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 4px 0 10px;
+}
+table.legs th {
+  text-align: left;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  font-size: 0.76rem;
+  color: var(--sub);
+  border-bottom: 2px solid var(--gold);
+  padding: 6px 8px;
+}
+table.legs td { padding: 8px 8px; border-bottom: 1px dotted var(--rule); vertical-align: top; }
+table.legs tr:last-child td { border-bottom: none; }
+table.legs td.op-note { font-style: italic; color: var(--sub); font-size: 0.82rem; }
+
+table.seatmap { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin: 10px 0 4px; }
+table.seatmap th, table.seatmap td {
+  text-align: center;
+  padding: 6px 6px;
+  border-bottom: 1px solid var(--line);
+}
+table.seatmap th {
+  font-variant: small-caps;
+  color: var(--pine-deep);
+  font-size: 0.78rem;
+  border-bottom: 2px solid var(--gold);
+}
+table.seatmap td:first-child, table.seatmap th:first-child { text-align: left; }
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 28px;
+  font-size: 0.94rem;
+  margin: 14px 0;
+}
+.detail-grid dt {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  color: var(--sub);
+  font-size: 0.82rem;
+  margin-bottom: 1px;
+}
+.detail-grid dd { margin: 0 0 10px; color: var(--ink); }
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 6px;
+}
+.cta {
+  display: inline-block;
+  border: 1px solid var(--pine);
+  color: var(--pine-deep) !important;
+  border-radius: 3px;
+  padding: 9px 16px;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  text-decoration: none !important;
+  background: #fbf8ef;
+}
+.cta:hover { background: var(--pine); color: #fff !important; }
+.cta.secondary { border-color: var(--rule); color: var(--ink-soft) !important; }
+.cta.secondary:hover { background: var(--paper-deep); color: var(--ink) !important; }
+
+.manual-note {
+  font-size: 0.82rem;
+  color: var(--sub);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.divider-motif {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  margin: 34px auto;
+  color: var(--gold-soft);
+}
+
+@media (max-width: 620px) {
+  .detail-grid { grid-template-columns: 1fr; }
+  section.panel, .day { padding: 20px 18px; }
+  table.legs, table.seatmap { font-size: 0.8rem; }
+}

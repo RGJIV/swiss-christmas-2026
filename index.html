@@ -5,108 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Château-d'Œx Christmas 2026 — Master Itinerary</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-<style>
-  :root {
-    --ink: #2b2521;
-    --sub: #6b5f56;
-    --line: #e4dcd0;
-    --accent: #a6432f;
-    --accent-soft: #f4ece3;
-    --bg: #fdfbf8;
-    --card: #ffffff;
-  }
-  * { box-sizing: border-box; }
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: -apple-system, "Segoe UI", Georgia, serif;
-    line-height: 1.55;
-    margin: 0;
-    padding: 0 16px 80px;
-  }
-  .wrap { max-width: 880px; margin: 0 auto; }
-  header {
-    padding: 40px 0 20px;
-    border-bottom: 3px solid var(--accent);
-    margin-bottom: 24px;
-  }
-  h1 { font-size: 1.7rem; margin: 0 0 6px; }
-  .subtitle { color: var(--sub); font-size: 0.95rem; margin: 0; }
-  .note {
-    background: var(--accent-soft);
-    border-left: 4px solid var(--accent);
-    padding: 12px 16px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    margin: 18px 0;
-  }
-  .glance table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 16px 0 30px; }
-  .glance th, .glance td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); }
-  .glance th { color: var(--sub); font-weight: 600; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.04em; }
-  day-card {}
-  .day {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 22px 24px;
-    margin-bottom: 22px;
-  }
-  .day h2 {
-    margin: 0 0 4px;
-    font-size: 1.25rem;
-    color: var(--accent);
-  }
-  .daymeta { color: var(--sub); font-size: 0.85rem; margin-bottom: 14px; }
-  .sched { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
-  .sched td { padding: 6px 8px; vertical-align: top; border-bottom: 1px solid var(--line); }
-  .sched td:first-child { white-space: nowrap; color: var(--sub); font-weight: 600; width: 105px; }
-  .sched tr:last-child td { border-bottom: none; }
-  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(166,67,47,0.35); }
-  a:hover { border-bottom-color: var(--accent); }
-  .map { font-size: 0.78rem; }
-  .map::before { content: "📍 "; }
-  .flag { font-size: 0.83rem; background: #fff6e0; border-left: 3px solid #d6a400; padding: 8px 12px; border-radius: 4px; margin-top: 12px; }
-  .caveat { font-size: 0.83rem; color: var(--sub); margin-top: 12px; }
-  footer { text-align: center; color: var(--sub); font-size: 0.8rem; margin-top: 40px; }
-  /* Map section */
-  .map-section {
-    margin: 28px 0 36px;
-  }
-  .map-section h2 {
-    font-size: 1.15rem;
-    color: var(--accent);
-    margin: 0 0 8px;
-  }
-  .map-section p {
-    font-size: 0.88rem;
-    color: var(--sub);
-    margin: 0 0 12px;
-  }
-  #itinerary-map {
-    height: 480px;
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid var(--line);
-    z-index: 1;
-  }
-  .leaflet-popup-content {
-    font-family: -apple-system, "Segoe UI", Georgia, serif;
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-  .leaflet-popup-content strong { color: var(--accent); }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
 
-<header>
-  <h1>Christmas & New Year's 2026 — Switzerland</h1>
-  <p class="subtitle">Master daily itinerary · Richard G Jennings IV & family · Last updated Aug 12, 2026</p>
+<header class="masthead">
+  <svg class="crest" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="1.4"/>
+    <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="0.7"/>
+    <path d="M18 66 L37 38 L48 54 L58 34 L82 66 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/>
+    <path d="M58 34 L64 43 L70 34 L82 66" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/>
+    <path d="M50 20 L50 30 M45 25 L55 25 M46.5 21.5 L53.5 28.5 M53.5 21.5 L46.5 28.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+  </svg>
+  <span class="kicker">Jennings Family · Est. Journey 2026</span>
+  <h1>Christmas &amp; New Year's — Switzerland</h1>
+  <p class="subtitle">Master Daily Itinerary · Château-d'Œx &amp; Beyond · Last updated August 12, 2026</p>
+  <hr class="rule">
+  <hr class="rule thin">
+  <nav class="pagelinks">
+    <a class="current" href="index.html">Master Itinerary</a>
+    <span class="sep">❖</span>
+    <a href="details.html">Travel Details — Flights, Hotel &amp; Car</a>
+  </nav>
 </header>
 
 <div class="note">
-Based at Granny's house — <a href="https://www.google.com/maps/search/?api=1&query=20+Route+du+Planemard,+1660+Chateau-d%27Oex,+Switzerland" target="_blank">20 Route du Planemard, Château-d'Œx</a> — the whole trip (fallback plan, since the Andermatt/Grindelwald ski week isn't booked). Every "Drive" link below opens turn-by-turn Google Maps directions. Times are planning estimates, not fixed bookings.
+Based at Granny's house — <a href="https://www.google.com/maps/search/?api=1&query=20+Route+du+Planemard,+1660+Chateau-d%27Oex,+Switzerland" target="_blank">20 Route du Planemard, Château-d'Œx</a> — the whole trip (fallback plan, since the Andermatt/Grindelwald ski week isn't booked). Every "Drive" link below opens turn-by-turn Google Maps directions. Times are planning estimates, not fixed bookings. Confirmation numbers for every booking — flights, rental car, and the Zurich airport hotel — are on the <a href="details.html">Travel Details</a> page.
 </div>
 
 <div class="glance">
@@ -121,8 +46,8 @@ Based at Granny's house — <a href="https://www.google.com/maps/search/?api=1&q
 <tr><td>Dec 28</td><td>Mon</td><td>Ski — Rougemont or Gstaad</td><td>~9:00am</td><td>~5:00pm</td></tr>
 <tr><td>Dec 29</td><td>Tue</td><td>Ski — Zweisimmen/Rinderberg</td><td>8:15am</td><td>~5:00pm</td></tr>
 <tr><td>Dec 30</td><td>Wed</td><td>Vevey (or ski)</td><td>9:00am</td><td>2:50pm</td></tr>
-<tr><td>Dec 31</td><td>Thu</td><td>Departure — Fribourg stop</td><td>1:00pm</td><td>ZRH 4:00pm</td></tr>
-<tr><td>Jan 1</td><td>Fri</td><td>Fly home</td><td>—</td><td>—</td></tr>
+<tr><td>Dec 31</td><td>Thu</td><td>Departure — Fribourg stop, overnight at ZRH</td><td>1:00pm</td><td>ZRH 4:00pm</td></tr>
+<tr><td>Jan 1</td><td>Fri</td><td>Fly home</td><td>6:50am</td><td>—</td></tr>
 </table>
 </div>
 
@@ -137,9 +62,9 @@ Based at Granny's house — <a href="https://www.google.com/maps/search/?api=1&q
 <h2>Dec 22 (Tue) — Arrival + Maison Cailler</h2>
 <div class="daymeta">Zurich Airport → Broc → Château-d'Œx</div>
 <table class="sched">
-<tr><td>10:50am</td><td>Land <a href="https://www.google.com/maps/search/?api=1&query=Zurich+Airport+(ZRH)" target="_blank">Zurich Airport (ZRH)</a></td></tr>
+<tr><td>10:50am</td><td>Land <a href="https://www.google.com/maps/search/?api=1&query=Zurich+Airport+(ZRH)" target="_blank">Zurich Airport (ZRH)</a> — Delta flight 52 from JFK</td></tr>
 <tr><td>10:50–11:30am</td><td>Immigration + baggage claim</td></tr>
-<tr><td>11:30–11:50am</td><td>Enterprise counter — pick up rental car</td></tr>
+<tr><td>11:30–11:50am</td><td>Enterprise counter — pick up the rental car (<a href="details.html#car">confirmation 1497861224</a>)</td></tr>
 <tr><td>11:50am</td><td>Depart Zurich Airport<br><span class="map"><a href="https://www.google.com/maps/dir/?api=1&origin=Zurich+Airport+(ZRH),+Switzerland&destination=Rue+Jules+Bellet+7,+1636+Broc,+Switzerland&travelmode=driving" target="_blank">Drive: Zurich Airport → Maison Cailler, Broc</a> (~1h55m)</span></td></tr>
 <tr><td>1:45–2:00pm</td><td>Park, check in — <a href="https://www.cailler.ch/en/maison-cailler-experiences" target="_blank">Maison Cailler</a></td></tr>
 <tr><td>2:00–3:00pm</td><td><a href="https://www.cailler.ch/en/maison-cailler-experiences" target="_blank">Chocolate factory tour + tasting</a></td></tr>
@@ -274,21 +199,25 @@ Based at Granny's house — <a href="https://www.google.com/maps/search/?api=1&q
 <tr><td>1:45–2:30pm</td><td>Fribourg stop — old town walk, the <a href="https://fribourg.ch/en/inspiration/funicular/" target="_blank">"Funi" funicular</a></td></tr>
 <tr><td>2:30pm</td><td>Depart Fribourg<br><span class="map"><a href="https://www.google.com/maps/dir/?api=1&origin=Fribourg,+Switzerland&destination=Zurich+Airport+(ZRH),+Switzerland&travelmode=driving" target="_blank">Drive: Fribourg → Zurich Airport</a> (~1h30m)</span></td></tr>
 <tr><td>4:00pm</td><td>Arrive ZRH, return rental car — 1-hour buffer before the 5:00pm deadline</td></tr>
-<tr><td>Evening</td><td>Check into the airport hotel <em>(still needs booking)</em></td></tr>
+<tr><td>Evening</td><td>Check in — <a href="details.html#hotel">Radisson Blu Hotel, Zurich Airport</a> (confirmation 2L28PDJ2, 2 rooms) — 2:00pm check-in opens, so the room is ready well before arrival</td></tr>
 </table>
 </div>
 
 <!-- JAN 1 -->
 <div class="day">
 <h2>Jan 1 (Fri) — Fly home</h2>
-<p>6:50am departure — Zurich → Amsterdam → Atlanta → Asheville.</p>
+<div class="daymeta">Radisson Blu Zurich Airport → ZRH → AMS → ATL → AVL</div>
+<p>Checkout by 12:00pm, but boarding is long before that — 6:50am departure from Zurich, connecting through Amsterdam and Atlanta to Asheville. Full flight times and confirmation numbers are on the <a href="details.html#flights">Travel Details</a> page.</p>
 </div>
 
 <div class="caveat">
-<strong>Open items:</strong> Maison Cailler tour slot & Rochers-de-Naye/Santa's House tickets need advance booking · La Braye's 2026–27 operating calendar not yet published · Zurich airport hotel for Dec 31 not yet booked · ski-week decision (Andermatt/Grindelwald vs. staying put) still pending.
+<strong>Open items:</strong> Maison Cailler tour slot &amp; Rochers-de-Naye/Santa's House tickets need advance booking · La Braye's 2026–27 operating calendar not yet published · ski-week decision (Andermatt/Grindelwald vs. staying put) still pending · rental car insurance decision (Allianz vs. existing coverage) — see <a href="details.html#car">Travel Details</a>.
 </div>
 
-<footer>Château-d'Œx Christmas 2026 · Master Itinerary</footer>
+<footer class="pagefoot">
+<hr class="rule thin">
+Château-d'Œx Christmas 2026 · Master Itinerary · <a href="details.html">Travel Details →</a>
+</footer>
 
 </div>
 
@@ -304,7 +233,7 @@ Based at Granny's house — <a href="https://www.google.com/maps/search/?api=1&q
 
   const locations = [
     { name: "Home base — 20 Route du Planemard", lat: 46.475, lng: 7.135, day: "All days · Château-d'Œx" },
-    { name: "Zurich Airport (ZRH)", lat: 47.4647, lng: 8.5492, day: "Dec 22 arrival · Dec 31 departure" },
+    { name: "Zurich Airport (ZRH)", lat: 47.4647, lng: 8.5492, day: "Dec 22 arrival · Dec 31 departure &amp; hotel" },
     { name: "Maison Cailler, Broc", lat: 46.6069, lng: 7.1087, day: "Dec 22 · Chocolate factory tour" },
     { name: "Montreux (station / Noël market)", lat: 46.4359, lng: 6.9104, day: "Dec 23 · Market, lakefront, Freddie Mercury" },
     { name: "Rochers-de-Naye (Santa's House)", lat: 46.4319, lng: 6.9762, day: "Dec 23 · Cogwheel train + summit" },
@@ -323,7 +252,7 @@ Based at Granny's house — <a href="https://www.google.com/maps/search/?api=1&q
 
   const baseIcon = L.divIcon({
     className: '',
-    html: '<div style="background:#a6432f;width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4);"></div>',
+    html: '<div style="background:#1f4d3a;width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4);"></div>',
     iconSize: [14, 14],
     iconAnchor: [7, 7]
   });
